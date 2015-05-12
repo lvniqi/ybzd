@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>249</width>
+    <height>114</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>150</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{   
+  font-size:10.5pt;   
+  color:white;   
+  font-family:&quot;Microsoft YaHei UI&quot;;   
+}
+QMenuBar
+{
+    background: transparent;
+    color: silver;
+    
+}
+
+QMenuBar::item
+{
+    background: transparent;
+    
+}
+
+QMenuBar::item:selected
+{
+    color: black;
+	background-color: white;
+;
+}
+
+QMenuBar::item:pressed
+{
+    border: 1px solid #3A3939;
+    background-color: #78879b;
+    color: black;
+    margin-bottom:1px;
+    padding-bottom:1px;
+}
+
+QMenu
+{
+    border: 1px solid #3A3939;
+    color: silver;
+    background-color: #010101;
+    
+}
+
+QMenu::item
+{
+    padding: 2px 20px 2px 20px;
+    
+}
+
+QMenu::item:selected
+{
+    color: black;
+	background-color: white;
+}
+   
+CallWidget QLineEdit#telEdt  
+{   
+  font-size:24px;   
+}   
+QMainWindow,QDialog{   
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #1B2534, stop: 0.4 #010101,   
+                                 stop: 0.5 #000101, stop: 1.0 #1F2B3C);   
+}   
+QWidget{   
+    background:#121922;   
+}   
+QLabel{   
+   background:transparent;   
+}   
+DailForm QLineEdit#phoneLineEdt{   
+  font-size:36px;   
+  font-weight: bold;   
+}   
+QPushButton,QToolButton{   
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #212C3F);  
+    border-style: outset;  
+    border-width: 1px;   
+    border-radius: 5px;   
+    border-color: #11223F;   
+    padding: 1px;   
+	min-width: 2em;
+}   
+QPushButton::hover,QToolButton::hover{   
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #313C4F); 
+    border-color: #5D8B9E;  
+	
+}   
+QPushButton::pressed,QToolButton::pressed{   
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #717C8F); 
+	color: white;
+    border-color: #5D8B9E;   
+}   
+QPushButton::disabled,QToolButton::disabled{   
+    background: rgb(10, 10,10);
+    border-color: #0A1320;   
+    color:#6A6864;   
+}   
+QDialog QPushButton,QDialog QToolButton{   
+  min-width:30px;   
+  min-height:23px;   
+}   
+QToolButton[objectName=&quot;minimizeToolBtn&quot;] {   
+    background: transparent;   
+    border:none;   
+    /*image:url(qss/minimize.png)*/
+}   
+QToolButton[objectName=&quot;minimizeToolBtn&quot;]:hover,QToolButton[objectName=&quot;minimizeToolBtn&quot;]:pressed {   
+    /*image:url(qss/minimize_hover.png)*/   
+}   
+QToolButton[objectName=&quot;maximizeToolBtn&quot;] {   
+    background: transparent;   
+    border:none;   
+    /*image:url(qss/maximize.png)*/   
+}   
+QToolButton[objectName=&quot;maximizeToolBtn&quot;]:hover,QToolButton[objectName=&quot;maximizeToolBtn&quot;]:pressed {   
+    /*image:url(qss/maximize_hover.png)*/   
+}   
+QToolButton[objectName=&quot;closeToolBtn&quot;],QToolButton[objectName=&quot;customCloseWindow&quot;] {   
+    background: transparent;   
+    border:none;   
+    /*image:url(qss/close.png)*/   
+}   
+QToolButton[objectName=&quot;closeToolBtn&quot;]:hover,QToolButton[objectName=&quot;closeToolBtn&quot;]:pressed{   
+    /*image:url(qss/close_hover.png)*/   
+}   
+QToolButton[objectName=&quot;customCloseWindow&quot;]:hover,QToolButton[objectName=&quot;customCloseWindow&quot;]:pressed{   
+    /*image:url(qss/close_hover.png)*/   
+}   
+QToolButton[objectName=&quot;titleSetUpToolBtn&quot;]{   
+    background: transparent;   
+    border:none;   
+    /*image:url(qss/setup.png)*/   
+}   
+DailForm QToolButton#oneToolBtn,QToolButton#OneToolBtn,QToolButton#twoToolBtn,QToolButton#threeToolBtn,   
+         QToolButton#fourToolBtn,QToolButton#fiveToolBtn,QToolButton#sixToolBtn,   
+         QToolButton#sevenToolBtn,QToolButton#eightToolBtn,QToolButton#nineToolBtn,   
+         QToolButton#starToolBtn,QToolButton#zeroToolBtn,QToolButton#sharpToolBtn {   
+    font-size:36px;   
+    border-radius: 10px;   
+}   
+DailForm QToolButton#delToolBtn{   
+    border-radius: 10px;   
+}   
+QFrame{   
+    border-color:#32435E;   
+    border-width:1px;   
+    border-radius: 3px;   
+}   
+QLineEdit,QTextEdit {   
+    border: 1px solid #32435E;   
+    border-radius: 3px;   
+    /* padding: 0 8px; */  
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #212C3F);   
+    selection-background-color: #0A246A;   
+}   
+QLineEdit::hover{   
+  border-color:#5D8B9E;   
+}   
+QLineEdit[echoMode=&quot;3&quot;] {   
+     lineedit-password-character: 9679;   
+}   
+#QLineEdit:read-only {   
+     background: #543F7C;   
+}   
+QTabWidget::pane { /* The tab widget frame */  
+     border: 1px solid #ffffff;   
+     position: absolute;    
+}   
+QTabWidget#MainTabWidget::tab-bar {   
+     left: -3px; /* move to the right by 5px */  
+}   
+QTabWidget#MainTabWidget QTabBar::tab {   
+     height: 14ex;   
+     width: 14ex;   
+}   
+QTabBar::tab {   
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #212C3F);  
+}   
+QTabBar::tab:selected{   
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #717C8F); 
+	
+}   
+QTabBar::tab:hover {   
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #313C4F); 
+    
+}
+QTabBar::tab:pressed{   
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #717C8F); 
+	color: white;
+    border-color: #5D8B9E;   
+}     
+#QTabBar::tab:selected {   
+     border-color: #32435E;   
+     border-right-color: #32435E; /* same as pane color */  
+}   
+#QTabBar::tab:!selected {   
+     margin-left: 2px; /* make non-selected tabs look smaller */  
+}   
+#QTabBar:tab:first:selected {   
+    margin-top: 0;   
+}   
+QTabBar:tab:last:selected {   
+    margin-right: 0;   
+}   
+QTabBar:tab:only-one {   
+     margin: 0;   
+}   
+QListWidget{   
+    border: 1px solid #32435E;   
+    background:#050609;   
+}   
+QListWidget::item:selected {   
+     /*border: 0px solid #33CCFF;*/  
+     border:none;   
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #6A848C,  stop: 1.0 #0F9EAF);   
+     padding:0px;   
+     margin:0px;   
+}   
+#QListWidget::item:selected:!active {   
+     border-width: 0px ;   
+}   
+#QListWidget::item:selected:active {   
+     border-width: 1px;   
+}   
+  
+QComboBox {   
+     border: 1px solid #32435E;   
+     border-radius: 3px;   
+     padding: 1px 18px 1px 3px;   
+     min-width: 6em;   
+}   
+QComboBox::hover{   
+  border-color:#5D8B9E;   
+}   
+QComboBox:editable {   
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #212C3F);   
+}   
+QComboBox:!editable, QComboBox::drop-down:editable {   
+      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #212C3F);   
+}   
+/* QComboBox gets the &quot;on&quot; state when the popup is open */  
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {   
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #080B10,   
+                                 stop: 1.0 #212C3F);;   
+}   
+QComboBox:on { /* shift the text when the popup opens */  
+     padding-top: 3px;   
+     padding-left: 4px;   
+}   
+QComboBox::drop-down {   
+     subcontrol-origin: padding;   
+     subcontrol-position: top right;   
+     width: 15px;   
+     border-left-width: 1px;   
+     border-left-color: 32435E;   
+     border-left-style: solid; /* just a single line */  
+     border-top-right-radius: 3px; /* same radius as the QComboBox */  
+     border-bottom-right-radius: 3px;   
+}   
+QComboBox::down-arrow {   
+     /*image: url(qss/downarrow.png);*/ 
+	 
+}   
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */  
+     top: 1px;   
+     left: 1px;   
+}   
+QComboBox QAbstractItemView {   
+     border: 2px solid #32435E;   
+     selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #506B79,   
+                                 stop: 1.0 #0D95A6);   
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,   
+                                 stop: 0 #1B2534, stop: 0.4 #010101,   
+                                 stop: 0.5 #000101, stop: 1.0 #1F2B3C);   
+} </string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
+       <item>
+        <widget class="QLabel" name="label32_11">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>波特率</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_baudrate">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>115200</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>57600</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>19200</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>9600</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_18">
+       <item>
+        <widget class="QLabel" name="label_242">
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>串口</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_com">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_com">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>扫描</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_19">
+       <item>
+        <widget class="QPushButton" name="pushButton_collect">
+         <property name="font">
+          <font>
+           <family>Microsoft YaHei UI</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>开启串口</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

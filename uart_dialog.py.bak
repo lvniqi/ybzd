@@ -1,0 +1,99 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'uart_dialog_ui.ui'
+#
+# Created: Fri Apr 17 18:54:17 2015
+#      by: PyQt4 UI code generator 4.10.1
+#
+# WARNING! All changes made in this file will be lost!
+import sys
+from uart_dialog_ui import Ui_Form
+from PyQt4 import QtCore, QtGui
+from Uart import Uart
+
+        
+class Uart_Widget(QtGui.QDialog,Ui_Form):
+    def __init__(self,parent=None):
+        QtGui.QDialog.__init__(self,parent)
+        self.setupUi(self) # Ui_Form.setupUi
+        self.uart = Uart(115200)
+        ports = self.uart.GetFreePort()
+        #数据采集回调函数
+        self.collect_func = None
+        self.stop_collect_func = None
+        #连接按键
+        self.connect(self.pushButton_com,QtCore.SIGNAL("clicked()"), self.scanUart)
+        #连接点击打开串口
+        self.connect(self.pushButton_collect, QtCore.SIGNAL("clicked()"), self.startCollect)
+        
+    def scanUart(self):
+        now = self.comboBox_com.currentText()
+        if self.uart.isOpen() :
+            self.uart.close()
+            
+        self.uart.setBaudrate(self.comboBox_baudrate.currentText())
+        self.comboBox_com.clear()
+        if not self.uart.SetPortAuto():
+            QtGui.QMessageBox.warning(self,u"找不到串口",u"找不到串口!\n请重新扫描！")
+        else:
+                self.comboBox_com.addItems(map(lambda x:x[1],self.uart.freeport))
+                if now in  map(lambda x:x[1],self.uart.freeport):
+                    self.comboBox_com.setCurrentIndex(self.comboBox_com.findText(now))
+                    
+    #开始采集
+    def startCollect(self):
+        string =   self.pushButton_collect.text( )
+        
+        if string == u'开启串口':
+            self.scanUart()
+            if not self.uart.freeport:
+                pass
+                
+            else:
+                self.pushButton_collect.setText(u'关闭串口')
+                #打开端口
+                print self.comboBox_com.currentText()
+                for x in self.uart.freeport:
+                    if str(self.comboBox_com.currentText()) in x:
+                        self.uart.setPort(x[0])
+                self.uart.setBaudrate(self.comboBox_baudrate.currentText())
+                if self.collect_func:
+                    self.collect_func()
+                #清空
+                #self.CleanData()
+                #串口数据线程
+                #self.adddata  = GettingUartData_Thread(self.uart)
+                #采集串口数据
+                #self.connect(self.adddata, QtCore.SIGNAL("UartData"), self.AddingData)
+                #self.adddata.start()
+                #禁止修改
+                self.comboBox_com.setDisabled(True)
+                self.comboBox_baudrate.setDisabled(True)
+                self.pushButton_com.setDisabled(True)
+        else:
+            #停止收集
+            #self.AddingData_Stop()
+            self.pushButton_collect.setText(u'开启串口')
+            if self.stop_collect_func:
+                    self.stop_collect_func()
+            #打开修改
+            self.comboBox_com.setDisabled(False)
+            self.comboBox_baudrate.setDisabled(False)
+            self.pushButton_com.setDisabled(False)
+    #设置回调函数
+    def setCollectFunc(self,func):
+        self.collect_func = func
+    def setStopCollectFunc(self,func):
+        self.stop_collect_func = func
+    #返回串口
+    def getUart(self):
+        return self.uart
+
+
+if __name__ == "__main__":
+    app = QtGui.QApplication(sys.argv)
+    widget = Uart_Widget()
+    #widget.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+    #widget.showFullScreen()
+    widget.show()
+    sys.exit(app.exec_())

@@ -1,0 +1,5 @@
+cd E:\WORKSPACE\CAR_HELPER_µç´Å°æ
+e:
+::pyinstaller Car_HELPER.py -w 
+python setup.py py2exe
+pause 
